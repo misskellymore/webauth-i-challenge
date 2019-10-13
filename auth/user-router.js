@@ -1,10 +1,11 @@
 const route = require('express').Router();
 const model = require('./user-model.js');
 const bcrypt = require('bcryptjs');
+const resrict = require('./restrict.js');
 
 
 // get users
-route.get('/', (req, res) => {
+route.get('/', resrict, (req, res) => {
     model.find()
     .then(users => {
         res.json(users)
