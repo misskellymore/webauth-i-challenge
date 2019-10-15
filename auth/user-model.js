@@ -16,7 +16,8 @@ function findBy(where) {
 
 
 function findByUserName(username) {
-    return findBy({username}).first();
+    return db('users').where(username);
+
 };
 
 function find() {
